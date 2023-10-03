@@ -21,3 +21,13 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+public/favicon.ico
+public/favicon.ico
+public/logo192.png
+public/manifest.json
+public/logo512.png
+src/App.test.js
+.gitignore
+src/logo.svg
+src/reportWebVitals.js
+.gitignore
