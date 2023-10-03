@@ -1,0 +1,16 @@
+body {
+  color: red;
+}
+.title {
+  color: rgb(0, 140, 93);
+}
+input[type="text"],
+button {
+  padding: 10px 30px;
+  border: 2px solid black;
+  font-size: 30px;
+  outline: none;
+}
+/* button {
+  border-left: 0;
+} */
