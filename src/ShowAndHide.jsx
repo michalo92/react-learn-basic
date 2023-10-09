@@ -11,11 +11,11 @@ class ShowAndHide extends React.Component {
   }
 
   handleClick() {
-    console.log(this.state.messageIsActive);
-    this.setState({
-      messageIsActive: !this.state.messageIsActive,
-    });
+    this.setState((prevState) => ({
+      messageIsActive: !prevState.messageIsActive,
+    }));
   }
+
   render() {
     const text =
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus repudiandae culpa velit, minus maiores, magnam autem iste quidem adipisci omnis consectetur earum perferendis animi expedita provident deleniti excepturi minima labore!";
@@ -24,9 +24,10 @@ class ShowAndHide extends React.Component {
         <button onClick={this.handleClick}>
           {this.state.messageIsActive ? "Hide" : "Show"}
         </button>
-        <h1 className="title">{text}</h1>
+        {this.state.messageIsActive && <h1 className="title">{text}</h1>}
       </>
     );
   }
 }
+
 export default ShowAndHide;
