@@ -1,20 +1,32 @@
 import React from "react";
-import { ReactDOM } from "react";
 
 const positiveMessage = "Mozesz obejrzec film";
 
 const negativeMessage =
   "Nie mozesz obejzec tego filmu poniewaz masz ponizej 16lat";
-const displayMessage = (isConfirmed, isFormSubmited) => {
-  if (isFormSubmited) {
-    if (isConfirmed) {
-      return <ValidationMessage text={positiveMessage} />;
-    } else {
-      return <ValidationMessage text={negativeMessage} />;
-    }
-  } else {
-    return null;
-  }
+// const displayMessage = (isConfirmed, isFormSubmited) => {
+//   if (isFormSubmited) {
+//     if (isConfirmed) {
+//       return <ValidationMessage text={positiveMessage} />;
+//     } else {
+//       return <ValidationMessage text={negativeMessage} />;
+//     }
+//   } else {
+//     return null;
+//   }
+// };
+const OrderForm = (props) => {
+  const { submit, checked, change } = props;
+  return (
+    <>
+      <form onSubmit={submit}>
+        <input type="checkbox" id="age" checked={checked} onChange={change} />
+        <label htmlFor="age">Mam co najmniej 16 lat</label>
+        <br />
+        <button type="submit">Kup bilet</button>
+      </form>
+    </>
+  );
 };
 
 const ValidationMessage = (props) => {
@@ -41,36 +53,31 @@ class CheckboxAgeConfirmation extends React.Component {
       });
     }
   };
-  // displayMessage = () => {
-  //   if (this.state.isFormSubmited) {
-  //     if (this.state.isConfirmed) {
-  //       return <ValidationMessage text={positiveMessage} />;
-  //     } else {
-  //       return <ValidationMessage text={negativeMessage} />;
-  //     }
-  //   } else {
-  //     return null;
-  //   }
-  // };
+  displayMessage = () => {
+    if (this.state.isFormSubmited) {
+      if (this.state.isConfirmed) {
+        return <ValidationMessage text={positiveMessage} />;
+      } else {
+        return <ValidationMessage text={negativeMessage} />;
+      }
+    } else {
+      return null;
+    }
+  };
 
   render() {
-    const { isConfirmed, isFormSubmited } = this.state;
+    const { isConfirmed } = this.state;
 
     return (
       <>
         <h1>Kup bilet na horror roku!</h1>
-        <form onSubmit={this.handleFormSubmit}>
-          <input
-            type="checkbox"
-            id="age"
-            checked={isConfirmed}
-            onChange={this.handleChange}
-          />
-          <label htmlFor="age">Mam co najmniej 16 lat</label>
-          <br />
-          <button type="submit">Kup bilet</button>
-        </form>
-        {displayMessage(isConfirmed, isFormSubmited)}
+        <OrderForm
+          checked={isConfirmed}
+          submit={this.handleFormSubmit}
+          change={this.handleChange}
+        />
+        {this.displayMessage()}
+        {/* {displayMessage(isConfirmed, isFormSubmited)} */}
       </>
     );
   }

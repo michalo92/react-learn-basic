@@ -7,6 +7,8 @@ import AppImport from "./Input";
 import ShowAndHide from "./ShowAndHide";
 import Counter from "./Counter";
 import CheckboxAgeConfirmation from "./CheckBoxConf/CheckboxAgeConfirmation";
+import ShoppingCard from "./Shop/Shopping";
+import ListItems from "./ListItems/ListItems";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -16,6 +18,8 @@ root.render(
     {/* <AppImport /> */}
     {/* <ShowAndHide /> */}
     {/* <Counter counter={0} /> */}
-    <CheckboxAgeConfirmation />
+    {/* <CheckboxAgeConfirmation /> */}
+    {/* <ShoppingCard /> */}
+    <ListItems />
   </React.StrictMode>
 );
