@@ -9,6 +9,9 @@ import Counter from "./Counter";
 import CheckboxAgeConfirmation from "./CheckBoxConf/CheckboxAgeConfirmation";
 import ShoppingCard from "./Shop/Shopping";
 import ListItems from "./ListItems/ListItems";
+// import ListItemsRestaurant from "./RestaurantMenu/Apka";
+import ExchangeCounter from "./ExchangeCounter/ExchangeCounter";
+import Wrozba from "./zadanie1/wrozba";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -20,6 +23,9 @@ root.render(
     {/* <Counter counter={0} /> */}
     {/* <CheckboxAgeConfirmation /> */}
     {/* <ShoppingCard /> */}
-    <ListItems />
+    {/* <ListItems /> */}
+    {/* <ListItemsRestaurant /> */}
+    {/* <ExchangeCounter /> */}
+    <Wrozba />
   </React.StrictMode>
 );
